@@ -329,6 +329,9 @@ class Environment(dict):
 
         self['build_dir'] = os.path.join(self.output_dir, build_dirname)
 
+        self['programmer'] = getattr(args, 'programmer', None)
+
+
     @property
     def arduino_lib_version(self):
         self.find_arduino_file('version.txt', ['lib'],
